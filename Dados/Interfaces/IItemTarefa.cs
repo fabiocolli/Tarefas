@@ -4,7 +4,7 @@ namespace Dados.Interfaces
 {
     public interface IItemTarefa : IRepositorio<ItemTarefa>
     {
-        Task<IEnumerable<ItemTarefa>> OrdenarPorDataFimParaInicio();
-        Task<IEnumerable<ItemTarefa>> BuscarItemTarefaNomeAproximado();
+        Task<IEnumerable<ItemTarefa>> BuscarItemTarefaNomeAproximado(string busca);
+        Task<IEnumerable<ItemTarefa>> BuscarItemTarefaPeloIdTarefa(int idTarefa);
     }
 }

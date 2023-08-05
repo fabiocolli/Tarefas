@@ -22,7 +22,7 @@ builder.Services.AddSingleton(typeof(IRepositorio<>), typeof(RepositorioBase<>))
 builder.Services.AddSingleton<ITarefa, RepositorioTarefa>();
 builder.Services.AddSingleton<IItemTarefa, RepositorioItemTarefa>();
 
-var config = new AutoMapper.MapperConfiguration(cfg =>
+var config = new MapperConfiguration(cfg =>
 {
     cfg.CreateMap<Tarefa, TarefaViewModel>();
     cfg.CreateMap<TarefaViewModel, Tarefa>();
@@ -35,6 +35,15 @@ var config = new AutoMapper.MapperConfiguration(cfg =>
 
     cfg.CreateMap<ItenTarefaAtualizaViewModel, ItemTarefa>();
     cfg.CreateMap<ItemTarefa, ItenTarefaAtualizaViewModel>();
+
+    cfg.CreateMap<ItenTarefaAdicionaViewModel, ItemTarefa>();
+    cfg.CreateMap<ItemTarefa, ItenTarefaAdicionaViewModel>();
+
+    cfg.CreateMap<ItenTarefaExcluirViewModel, ItemTarefa>();
+    cfg.CreateMap<ItemTarefa, ItenTarefaExcluirViewModel>();
+
+    cfg.CreateMap<ItenTarefaTodasViewModel, ItemTarefa>();
+    cfg.CreateMap<ItemTarefa, ItenTarefaTodasViewModel>();
 });
 
 IMapper mapeador = config.CreateMapper();

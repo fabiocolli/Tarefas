@@ -20,23 +20,6 @@ namespace Dados.Config
             }
         }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        //    modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-        //    modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
-
-        //    modelBuilder.Properties<string>()
-        //        .Configure(p => p.HasColumnType("varchar"));
-
-        //    modelBuilder.Properties<string>()
-        //        .Configure(p => p.HasMaxLength(100));
-
-        //    modelBuilder.Configurations.Add(new ConfiguracaoPessoa());
-        //    modelBuilder.Configurations.Add(new ConfiguracaoLivro());
-        //    modelBuilder.Configurations.Add(new ConfiguracaoItenEmprestado());
-        //}
-
         public string PegarStringConexao()
         {
             return "Data Source=fc-p\\local;Initial Catalog=Tarefas;Persist Security Info=True;User ID=sa;Password=qM1t$up|iC74;TrustServerCertificate=True";

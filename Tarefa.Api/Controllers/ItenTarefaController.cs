@@ -20,9 +20,11 @@ namespace Web.Api.Controllers
         }
 
         [HttpPost("/AdicionarItemTarefa")]
-        public async Task AdicionarItemTarefa(ItemTarefaViewModel itemTarefa)
+        public async Task AdicionarItemTarefa(ItenTarefaAdicionaViewModel itemTarefa)
         {
-            await _itemTarefa.Adicionar(_mapeador.Map<ItemTarefa>(itemTarefa));
+            var item = _mapeador.Map<ItemTarefa>(itemTarefa);
+
+            await _itemTarefa.Adicionar(item);
         }
 
         [HttpPost("/AtualizarItemTarefa")]
@@ -32,7 +34,7 @@ namespace Web.Api.Controllers
         }
 
         [HttpPost("/ExcluirItemTarefa")]
-        public async Task ExcluirItemTarefa(ItemTarefaViewModel itemTarefa)
+        public async Task ExcluirItemTarefa(ItenTarefaExcluirViewModel itemTarefa)
         {
             await _itemTarefa.Excluir(_mapeador.Map<ItemTarefa>(itemTarefa));
         }
@@ -43,10 +45,17 @@ namespace Web.Api.Controllers
             return _mapeador.Map<ItemTarefaViewModel>(await _itemTarefa.BuscarPeloId(id));
         }
 
-        [HttpGet("/BuscarTodosOsItensDaTarefa")]
-        public async Task<List<ItemTarefaViewModel>> BuscarTodosOsItensDaTarefa()
+        [HttpGet("/ListarTodosOsItensDeTarefa")]
+        public async Task<IEnumerable<ItenTarefaTodasViewModel>> ListarTodosOsItensDeTarefa()
         {
-            return _mapeador.Map<List<ItemTarefaViewModel>>(await _itemTarefa.ListarTudo());
+            return _mapeador.Map<IEnumerable<ItenTarefaTodasViewModel>>(await _itemTarefa.ListarTudo());
+        }
+
+        [HttpGet("/ListarItenDeUmaTarefaPeloIdTarefa")]
+        public async Task<IEnumerable<ItenTarefaTodasViewModel>> ListarItenDeUmaTarefaPeloIdTarefa(int idTarefa)
+        {
+            return _mapeador.Map<IEnumerable<ItenTarefaTodasViewModel>>
+                (await _itemTarefa.BuscarItemTarefaPeloIdTarefa(idTarefa));
         }
     }
 }
