@@ -19,7 +19,7 @@ namespace Web.Api.Controllers
             _mapeador = mapper;
         }
 
-        [HttpPost("/AdicionarTarefa")]
+        [HttpPost("/Adicionar")]
         public async Task AdicionarTarefa(TarefaViewModel tarefa)
         {
             var tarefaMapeada = _mapeador.Map<Tarefa>(tarefa);
@@ -33,7 +33,7 @@ namespace Web.Api.Controllers
             await _tarefa.Excluir(new Tarefa { Id = id });
         }
 
-        [HttpGet("/BuscarTarefa")]
+        [HttpGet("/BuscarTarefaPeloId")]
         public async Task<TarefaPeloIdViewModel> BuscarTarefa(int id)
         {
             return _mapeador.Map<TarefaPeloIdViewModel>(await _tarefa.BuscarPeloId(id));
