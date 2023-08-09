@@ -19,6 +19,12 @@ namespace Web.Api.Controllers
             _mapeador = mapper;
         }
 
+        [HttpPost("/AdicionarItemTarefa")]
+        public async Task AdicionarItemTarefa(ItenTarefaAdicionaViewModel itemTarefa)
+        {
+            await _itemTarefa.Adicionar(_mapeador.Map<ItemTarefa>(itemTarefa));
+        }
+
         [HttpPost("/AtualizarItemTarefa")]
         public async Task AtualizarItemTarefa(ItenTarefaAtualizaViewModel itemTarefa)
         {
