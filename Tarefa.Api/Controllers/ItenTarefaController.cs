@@ -13,10 +13,10 @@ namespace Web.Api.Controllers
         public readonly IItemTarefa _itemTarefa;
         public readonly IMapper _mapeador;
 
-        public ItenTarefaController(IItemTarefa itemTarefa, IMapper mapper)
+        public ItenTarefaController(IItemTarefa itemTarefa, IMapper mapeador)
         {
             _itemTarefa = itemTarefa;
-            _mapeador = mapper;
+            _mapeador = mapeador;
         }
 
         [HttpPost("/AdicionarItemTarefa")]

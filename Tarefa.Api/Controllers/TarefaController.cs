@@ -13,18 +13,16 @@ namespace Web.Api.Controllers
         public readonly ITarefa _tarefa;
         public readonly IMapper _mapeador;
 
-        public TarefaController(ITarefa tarefa, IMapper mapper)
+        public TarefaController(ITarefa tarefa, IMapper mapeador)
         {
             _tarefa = tarefa;
-            _mapeador = mapper;
+            _mapeador = mapeador;
         }
 
         [HttpPost("/Adicionar")]
         public async Task AdicionarTarefa(TarefaViewModel tarefa)
         {
-            var tarefaMapeada = _mapeador.Map<Tarefa>(tarefa);
-
-            await _tarefa.Adicionar(tarefaMapeada);
+            await _tarefa.Adicionar(_mapeador.Map<Tarefa>(tarefa));
         }
 
         [HttpPost("/Excluir")]
