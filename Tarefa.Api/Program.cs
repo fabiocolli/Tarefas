@@ -44,6 +44,9 @@ var config = new MapperConfiguration(cfg =>
 
     cfg.CreateMap<ItenTarefaTodasViewModel, ItemTarefa>();
     cfg.CreateMap<ItemTarefa, ItenTarefaTodasViewModel>();
+
+    cfg.CreateMap<TarefaAtualizarViewModel, Tarefa>();
+    cfg.CreateMap<Tarefa, TarefaAtualizarViewModel>();
 });
 
 IMapper mapeador = config.CreateMapper();

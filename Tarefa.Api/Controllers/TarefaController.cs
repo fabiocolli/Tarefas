@@ -25,6 +25,12 @@ namespace Web.Api.Controllers
             await _tarefa.Adicionar(_mapeador.Map<Tarefa>(tarefa));
         }
 
+        [HttpPut("/AtualizarTarefa")]
+        public async Task AtualizarTarefa(TarefaAtualizarViewModel tarefa)
+        {
+            await _tarefa.Atualizar(_mapeador.Map<Tarefa>(tarefa));
+        }
+
         [HttpPost("/Excluir")]
         public async Task Excluir(int id)
         {
