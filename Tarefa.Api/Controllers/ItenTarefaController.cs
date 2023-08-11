@@ -31,7 +31,7 @@ namespace Web.Api.Controllers
             await _itemTarefa.Atualizar(_mapeador.Map<ItemTarefa>(itemTarefa));
         }
 
-        [HttpPost("/ExcluirItemTarefa")]
+        [HttpDelete("/ExcluirItemTarefa")]
         public async Task ExcluirItemTarefa(ItenTarefaExcluirViewModel itemTarefa)
         {
             await _itemTarefa.Excluir(_mapeador.Map<ItemTarefa>(itemTarefa));

@@ -31,7 +31,7 @@ namespace Web.Api.Controllers
             await _tarefa.Atualizar(_mapeador.Map<Tarefa>(tarefa));
         }
 
-        [HttpPost("/Excluir")]
+        [HttpDelete("/Excluir")]
         public async Task Excluir(int id)
         {
             await _tarefa.Excluir(new Tarefa { Id = id });
