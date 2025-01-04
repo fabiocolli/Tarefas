@@ -49,3 +49,10 @@ O Entity Framework Core é configurado no arquivo `Program.cs` da camada `Tarefa
 
 ## Executando a Aplicação
 Para executar a aplicação, utilize o Visual Studio e configure o projeto `Tarefa.Api` como projeto de inicialização. Em seguida, execute a aplicação pressionando `F5` ou `Ctrl+F5`.
+
+## Criando o Banco de Dados via Migrations
+Para criar o banco de dados utilizando migrations, siga os passos abaixo:
+
+1. Abra o terminal no diretório do projeto `Tarefa.Api`.
+2. Execute o comando para adicionar uma nova migration: Add-Migration Criacao -Context ContextoBase
+3. Execute o comando para atualizar o banco de dados:Update-Database -Context ContextoBase
