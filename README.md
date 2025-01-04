@@ -22,10 +22,6 @@ Esta camada contém a lógica de acesso aos dados e as entidades do domínio. Ut
 
 ## Banco de Dados
 O banco de dados utilizado é o SQL Server. A string de conexão está configurada para se conectar a um servidor local com as seguintes credenciais:
-- **Data Source**: fc-p\local
-- **Initial Catalog**: Tarefas
-- **User ID**: sa
-- **Password**: qM1t$up|iC74
 
 ## Endpoints
 A API expõe os seguintes endpoints:
